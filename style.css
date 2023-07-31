@@ -1,0 +1,29 @@
+html,body
+{
+    min-height: 100vh;
+    margin: 0;
+}
+
+body
+
+{
+    display: flex;
+    flex-direction: column;
+
+
+}
+.floor
+{
+    flex-grow: 1;
+    background-color: #613f00;
+    background-image: 
+     linear-gradient(transparent 50%, rgba(173, 173, 173, 0.2) 50%),
+     linear-gradient(to right, transparent 99%, rgba(0, 0, 0, 1) 10%),
+     linear-gradient(to top, transparent 97%, rgba(0, 0, 0, 1) 10%);
+    background-size: 15vw 10vh;
+}
+.wall
+{
+    background-color: rgb(218, 212, 255);
+    flex-grow: 1;
+}
