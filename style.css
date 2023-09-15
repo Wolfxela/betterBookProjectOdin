@@ -88,6 +88,7 @@ body
 }
 .shelfSlot
 {
+    min-height: 93px;
     max-height: 97px;
     flex-grow: 1;
     background-color: rgb(148, 73, 38);
@@ -106,7 +107,7 @@ body
     background-color: rgb(184, 82, 82);
     border: 2px;
     border-style: solid;
-    border-color: rgb(138, 59, 59) ;
+    border-color: black;
     font-size: 14px;
 }
 img
@@ -127,4 +128,63 @@ button
 button:hover
 {
     border-color: gold;
+}
+.book:hover
+{
+    border-color: gold;
+}
+.book:active
+{
+    border-color: rgb(92, 250, 92);
+}
+.bookCover
+{
+    width:30vw;
+    height: 70vh;
+    background-color: rgb(17, 0, 255);
+    display: flex;
+    justify-content: end;
+    position: absolute;
+    top: 20vh;;
+    left: 30vw
+}
+.bookCover,.page
+{
+    border-radius: 0px 10px 10px 0px;
+    border-color: black;
+    border-style: solid;
+}
+.page
+{
+    border-left: 0px;
+    background-color: white;
+    height: 70vh;
+    width: 5px;
+    position: relative;
+    top: -2px;
+}
+.page:hover
+{
+    border-color: gold;
+}
+.page:active
+{
+    border-color: green;
+}
+.title
+{
+    flex-grow: 1;
+    font-size: 100px;
+    text-align: center;
+}
+.author
+{
+    text-align: end;
+    padding-right: 5px;
+    color: white;
+}
+.content
+{
+    display: flex;
+    flex-direction: column;
 }
