@@ -137,7 +137,7 @@ button:hover
 {
     border-color: rgb(92, 250, 92);
 }
-.bookCover
+.bookCover,.openBook
 {
     width:30vw;
     height: 70vh;
@@ -148,7 +148,7 @@ button:hover
     top: 20vh;;
     left: 30vw
 }
-.bookCover,.page
+.bookCover,.page,.openBook
 {
     border-radius: 0px 10px 10px 0px;
     border-color: black;
@@ -187,4 +187,35 @@ button:hover
 {
     display: flex;
     flex-direction: column;
+}
+.openBook
+{
+    border-radius: 10px;
+    width: 50vw;
+    left: 20vw;
+    padding: 10px;
+}
+.openPage
+{
+    display: flex;
+    flex-grow: 1;
+    background-color: white;
+    justify-content: center;
+}
+.left
+{
+    max-width: 50%;
+    background: linear-gradient(to right,white, grey);
+}
+.right
+{
+    max-width: 50%;
+    background: linear-gradient(to left,white, grey) ;
+}
+.textZone
+{
+    height: 90%;
+    max-width: 90%;
+    align-self: center;
+
 }
