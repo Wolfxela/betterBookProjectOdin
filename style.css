@@ -176,12 +176,15 @@ button:hover
     flex-grow: 1;
     font-size: 100px;
     text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 22px;
 }
 .author
 {
     text-align: end;
     padding-right: 5px;
     color: white;
+    font-size: 40px;
 }
 .content
 {
@@ -194,6 +197,10 @@ button:hover
     width: 50vw;
     left: 20vw;
     padding: 10px;
+}
+.openBook:hover
+{
+    border-color: white;
 }
 .openPage
 {
@@ -216,6 +223,8 @@ button:hover
 {
     height: 90%;
     max-width: 90%;
+    font-size: 30px;
+    font-style: italic;
     align-self: center;
 
 }

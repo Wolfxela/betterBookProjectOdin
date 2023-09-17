@@ -22,7 +22,8 @@ function addBook(inputPages,inputAuthor,inputDate,inputContent,inputTitle)
     curentBook = new bookMaker(inputPages,inputAuthor,inputDate,inputContent,inputTitle,color)
     bookArray[totalBooks] = curentBook;
     totalBooks++
-    book.addEventListener("click",function(){bookShowCover(bookArray[findSpotInParent(book)])})
+    console.log([findSpotInParent(book)])
+    book.addEventListener("click",function(){bookShowCover(bookArray[findSpotInParent(book)+(9* findSpotInParent(book.parentElement))])})
 
    
     
@@ -77,7 +78,7 @@ function bookShowCover(book)
   {
     const page = document.createElement("div")
     page.className = "page"
-    page.addEventListener("click",function(){bookShowOpen(book)})
+    page.addEventListener("click",function(){bookShowOpen(book); bookCover.remove()})
     bookCover.appendChild(page)
 
   }
@@ -102,6 +103,8 @@ function bookShowOpen(book)
   const textZone2 = document.createElement("div")
   textZone2.className = "textZone"
   openPage2.appendChild(textZone2)
+
+  openBook.addEventListener("click", function(){openBook.remove()})
 
   document.body.appendChild(openBook)
 }
