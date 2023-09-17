@@ -6,7 +6,7 @@ var totalBooks = 0;
 
 button.addEventListener("click", function(){addBook()})
 
-function addBook(inputPages,inputAuthor,inputDate,inputContent,inputTitle)
+function addBook(inputAuthor,inputContent,inputTitle)
 {
     
 
@@ -19,7 +19,7 @@ function addBook(inputPages,inputAuthor,inputDate,inputContent,inputTitle)
     {
         i+= 1;
     }
-    curentBook = new bookMaker(inputPages,inputAuthor,inputDate,inputContent,inputTitle,color)
+    curentBook = new bookMaker(inputAuthor,inputContent,inputTitle,color)
     bookArray[totalBooks] = curentBook;
     totalBooks++
     console.log([findSpotInParent(book)])
@@ -41,11 +41,9 @@ function randomColorCreator()
 
 }
 
-function bookMaker(bookPageCount,bookAuthor,bookDate,bookContent,bookTitle,color)
+function bookMaker(bookAuthor,bookContent,bookTitle,color)
 {
-  this.bookPageCount = bookPageCount
   this.bookAuthor = bookAuthor
-  this.bookDate = bookDate
   this.bookContent = bookContent
   this.bookTitle = bookTitle
   this.color = color;
