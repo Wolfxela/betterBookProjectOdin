@@ -115,7 +115,7 @@ img
     height: 10vh;
     width: 10vw;
 }
-button
+.newBookBtn
 {
     border-radius: 50%;
     background-color: transparent;
@@ -125,7 +125,7 @@ button
     top: 85vh;
     right: 1vw;
 }
-button:hover
+.newBookBtn:hover
 {
     border-color: gold;
 }
@@ -221,10 +221,50 @@ button:hover
 }
 .textZone
 {
-    height: 90%;
+    height: 99%;
     max-width: 90%;
     font-size: 30px;
     font-style: italic;
     align-self: center;
+    overflow-wrap: break-word;
 
+}
+
+form
+{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: aliceblue;
+    width:30vw;
+    height: 70vh;
+    position: absolute;
+    top: 20vh;
+    left: 30vw;
+    border-radius: 10px;
+}
+.input
+{
+    display: flex;
+    flex-direction: column;
+}
+textarea
+{
+    max-width: 95%;
+    max-height: 90%;
+    resize: none;
+}
+input
+{
+    border-radius: 20px;
+}
+input:valid
+{
+    border-color: green;
+    border-style: solid;
+}
+input:invalid
+{
+    border-color: red;
+    border-style: solid;
 }

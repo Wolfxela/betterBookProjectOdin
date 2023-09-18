@@ -57,29 +57,27 @@
 
     </div>
 
-    <form action="" method="post">
+    <form class="bookForm" action="" onsubmit="event.preventDefault()">
 
+        <div class="input">
 
-        <label for="author_Name">
+            <label for="author_Name">Author Name</label>
+            <input type="text" name="author_Name" id="author_Name" class="input input_author" placeholder="bobby..." required>
+        </div>
+        <div class="input">
+            <label for="book_title">Book Title</label>
+            <input type="text" name="book_title" id="book_title" class="input input_title" placeholder="bobby's book..." required>
+        </div>
+        <div class="input">
+            <label for="book_Content">Book Content</label>
+            <textarea name="book_Content" id="book_Content" class="input_Content" maxlength="600" cols="40" rows="35">helo</textarea>
+        </div>
+        
+        
 
-            <span>Author Name</span>
-            <input type="text" name="author_Name" id="author_Name" class="input input_author" placeholder="bobby...">
+       
 
-        </label>
-
-        <label for="book_title">
-
-            <span></span>
-            <input type="text" name="book_title" id="book_title" class="input input_title">
-
-        </label>
-        <label for="book_Content">
-
-            <textarea name="book_Content" id="book_Content" cols="30" rows="10">helo</textarea>
-
-        </label>
-
-        <button type="submit">Publish</button>
+        <button class="submitBtn" type="submit">Publish Your Book:D</button>
     
 
 

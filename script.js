@@ -1,10 +1,28 @@
 const containers = document.querySelectorAll('.shelfSlot')
 const button = document.querySelector('.newBookBtn')
+const submitBtn = document.querySelector('.submitBtn')
+const bookForm = document.querySelector('.bookForm')
+const formAuthor = document.querySelector('.input_author')
+const formTitle = document.querySelector('.input_title')
+const formContent = document.querySelector('.input_Content')
 var i = 0;
 const bookArray = []
 var totalBooks = 0;
 
-button.addEventListener("click", function(){addBook()})
+button.addEventListener("click", function(){bookForm.style.display = "flex"})
+submitBtn.addEventListener("click",function()
+{
+  if(formAuthor.checkValidity() == true && formTitle.checkValidity() == true)
+  {
+    addBook(formAuthor.value,formContent.value,formTitle.value)
+    formAuthor.value = "";
+    formTitle.value = ""
+    formContent.value = ""
+    bookForm.style.display = "none"
+  }
+  
+  
+})
 
 function addBook(inputAuthor,inputContent,inputTitle)
 {
@@ -22,7 +40,6 @@ function addBook(inputAuthor,inputContent,inputTitle)
     curentBook = new bookMaker(inputAuthor,inputContent,inputTitle,color)
     bookArray[totalBooks] = curentBook;
     totalBooks++
-    console.log([findSpotInParent(book)])
     book.addEventListener("click",function(){bookShowCover(bookArray[findSpotInParent(book)+(9* findSpotInParent(book.parentElement))])})
 
    
@@ -48,9 +65,6 @@ function bookMaker(bookAuthor,bookContent,bookTitle,color)
   this.bookTitle = bookTitle
   this.color = color;
 }
-
-addBook(1,"afox",1234,"greetings, it is i the fox who is in the box, now what you don't know is that i actually dont have a box, the taxmen took it","the story of a fox")
-
 function bookShowCover(book)
 {
 
@@ -93,13 +107,32 @@ function bookShowOpen(book)
   openBook.appendChild(openPage1)
   const textZone1 = document.createElement("div")
   textZone1.className = "textZone"
-  textZone1.textContent = book.bookContent;
   openPage1.appendChild(textZone1)
   const openPage2 = document.createElement("div")
   openPage2.classList.add("openPage","right")
   openBook.appendChild(openPage2)
   const textZone2 = document.createElement("div")
   textZone2.className = "textZone"
+  if(book.bookContent.length < 300)
+  {
+    textZone1.textContent = book.bookContent;
+  }
+  if(book.bookContent.length >= 300)
+  {
+    var text1 = "";
+    var text2 = "";
+    const chars = book.bookContent.split('')
+    for(var i = 0; i < 300; i++)
+    {
+      text1 += chars[i]
+    }
+    textZone1.textContent = text1;
+    for(var i = 300; i < book.bookContent.length; i++ )
+    {
+      text2 += chars[i]
+    }
+    textZone2.textContent = text2;
+  }
   openPage2.appendChild(textZone2)
 
   openBook.addEventListener("click", function(){openBook.remove()})
