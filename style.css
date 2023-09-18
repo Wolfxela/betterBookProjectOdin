@@ -172,6 +172,7 @@ img
 }
 .title
 {
+    overflow-wrap: break-word;
     flex-grow: 1;
     font-size: 100px;
     text-align: center;
@@ -180,6 +181,7 @@ img
 }
 .author
 {
+    overflow-wrap: break-word;
     text-align: end;
     padding-right: 5px;
     color: white;
