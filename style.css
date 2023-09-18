@@ -88,7 +88,6 @@ body
 }
 .shelfSlot
 {
-    min-height: 93px;
     max-height: 97px;
     flex-grow: 1;
     background-color: rgb(148, 73, 38);
@@ -251,7 +250,7 @@ form
 textarea
 {
     max-width: 95%;
-    max-height: 90%;
+    max-height: 60%;
     resize: none;
 }
 input
